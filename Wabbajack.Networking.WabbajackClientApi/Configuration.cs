@@ -12,6 +12,7 @@ public class Configuration
 
     public string ResponseShaHeader { get; set; } = "x-content-sha";
 
+    public string[] AdditionalAllowedPrefixes { get; set; } = Array.Empty<string>();
 
     public Uri ServerAllowList { get; set; } =
         new("https://raw.githubusercontent.com/wabbajack-tools/opt-out-lists/master/ServerWhitelist.yml");
