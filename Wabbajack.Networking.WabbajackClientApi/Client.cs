@@ -104,8 +104,7 @@ public class Client
         var d = new DeserializerBuilder()
             .WithNamingConvention(PascalCaseNamingConvention.Instance)
             .Build();
-        var remoteList = d.Deserialize<ServerAllowList>(str);
-        return LocalServerAllowList.LoadAndMerge(remoteList);
+        return d.Deserialize<ServerAllowList>(str);
     }
 
     public async Task<Archive[]> LoadMirrors()
